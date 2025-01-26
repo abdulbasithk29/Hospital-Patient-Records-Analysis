@@ -21,7 +21,7 @@ Synthetic data on ~1k patients of ‘Massachusetts General Hospital’ from 2011
 ---
 
 ## Analysis Insights
-1. How many patients have been admitted or readmitted over time?
+**1. How many patients have been admitted or readmitted over time?**
 
 • 154 Patients have been admitted over time with 1136 encounters
 
@@ -29,7 +29,7 @@ Synthetic data on ~1k patients of ‘Massachusetts General Hospital’ from 2011
 
 • I have defined admissions as hospital stays of 15 hours or more and re-admissions as any subsequent admission within 30 days of the previous admission, regardless of encounter class.
 
-2. How long are patients staying in the hospital, on average?
+**2. How long are patients staying in the hospital, on average?**
 
 • On average patients have been staying in hospital around 1.81 hours for normal encounters
 
@@ -37,13 +37,13 @@ Synthetic data on ~1k patients of ‘Massachusetts General Hospital’ from 2011
 
 • Please note that I have eliminated records with unusually long duration in outpatient, ambulatory, inpatient, and emergency encounters to maintain data integrity.
 
-3. How much is the average cost per visit?
+**3. How much is the average cost per visit?**
 
 • $3.62K is the average cost per visit.
 
 • $2.50K is the average payment made by patients after deducting the coverage amount
 
-4. How many procedures are covered by insurance?
+**4. How many procedures are covered by insurance?**
 
 • 32,580 procedures are covered by insurance.
 
