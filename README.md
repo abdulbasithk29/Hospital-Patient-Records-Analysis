@@ -20,6 +20,12 @@ Synthetic data on ~1k patients of ‘Massachusetts General Hospital’ from 2011
 
 ---
 
+## Live Dashboard Link
+
+https://app.powerbi.com/view?r=eyJrIjoiNjc4MDc4YjktN2U2NS00NGRhLWI2MTgtYzY4NzEwYTJkNThjIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9
+
+---
+
 ## Analysis Insights
 **1. How many patients have been admitted or readmitted over time?**
 
