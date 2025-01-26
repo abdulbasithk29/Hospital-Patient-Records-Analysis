@@ -63,28 +63,28 @@ Synthetic data on ~1k patients of ‘Massachusetts General Hospital’ from 2011
 ---
 
 ## Data Transformation Process – Power Query
---	Gathered the data from 5 csv files into Power Query
--- Added Custom columns in ‘encounters’ and ‘procedures’ tables for ‘duration’ of the encounter and procedure performed as per given start and stop date & time.
---	Replaced the blank values of ‘ReasonCode’ and ‘ReasonDescription’ columns from ‘encounters’ and ‘procedures’ tables as ‘N/A’.
---	Split the column ‘Birthplace’ in the ‘patients’ table in to ‘Town’ and ‘CountryCode’.
---	Added custom column for ‘Patient Status’ in ‘patients’ table to categorise as ‘Alive’ and ‘Deceased’.
---	Created column for Age by calculating using birth date and death date.
---	Created custom column for Age Group as ‘25 to 40’, ‘40 to 60’, ‘60 to 80’ & ‘80 above’
---	Replaced the blank values of ‘Maiden’ columns from table ‘patients’ as ‘No info’.
---	Done other transformations like changing data types and trimming the text columns.
---	Removed the records from ‘encounters’ table where extremely long durations of the encounters (several months) for outpatient visits considering these as outliers; the durations of outpatient visits are highly unusual and likely indicate data errors
---	Some of the records in ambulatory encounters are also suspiciously long duration (several months and even years). Ambulatory encounters typically last a few hours, similar to outpatient visits. Removed those records as well.
---	In inpatient encounters one record has 344 days duration is on the high end, it is not unheard of for severe or chronic conditions requiring long-term hospital care. Removed this record for the integrity of analysis.
---	Emergency encounters typically range from a few hours to a day. Durations over 24 hours are unusual and are removed.
+- Gathered the data from 5 csv files into Power Query
+- Added Custom columns in ‘encounters’ and ‘procedures’ tables for ‘duration’ of the encounter and procedure performed as per given start and stop date & time.
+- Replaced the blank values of ‘ReasonCode’ and ‘ReasonDescription’ columns from ‘encounters’ and ‘procedures’ tables as ‘N/A’.
+- Split the column ‘Birthplace’ in the ‘patients’ table in to ‘Town’ and ‘CountryCode’.
+- Added custom column for ‘Patient Status’ in ‘patients’ table to categorise as ‘Alive’ and ‘Deceased’.
+- Created column for Age by calculating using birth date and death date.
+- Created custom column for Age Group as ‘25 to 40’, ‘40 to 60’, ‘60 to 80’ & ‘80 above’
+- Replaced the blank values of ‘Maiden’ columns from table ‘patients’ as ‘No info’.
+- Done other transformations like changing data types and trimming the text columns.
+- Removed the records from ‘encounters’ table where extremely long durations of the encounters (several months) for outpatient visits considering these as outliers; the durations of outpatient visits are highly unusual and likely indicate data errors
+- Some of the records in ambulatory encounters are also suspiciously long duration (several months and even years). Ambulatory encounters typically last a few hours, similar to outpatient visits. Removed those records as well.
+- In inpatient encounters one record has 344 days duration is on the high end, it is not unheard of for severe or chronic conditions requiring long-term hospital care. Removed this record for the integrity of analysis.
+- Emergency encounters typically range from a few hours to a day. Durations over 24 hours are unusual and are removed.
 
 ---
 
 ## Data Transformation Process – DAX
---	Created Relationships between tables through Data modelling.
---	Created a calendar table to make relationships between encounter dates and procedure dates.
---	Created a week type column (Weekend & Weekday) to understand trends in patient admissions, optimize staffing, and improve resource allocation.
---	Created calculated columns in ‘encounters’ table as ‘NextStartDate’ (to find the date of next admission of the same patient) and ‘IsReadmission’ (to get whether it is a re admission or not (True or False)). Considering re admission as any hospital stay that occurs within 30 days after the discharge of a previous stay.
---	Considering ‘Admission’ as a hospital stay for more than or equal to 15 hours and Re admission as any admission of the same patient (>= 15hours stay) within 30 days of the previous admission, irrespective of the encounter class.
+- Created Relationships between tables through Data modelling.
+- Created a calendar table to make relationships between encounter dates and procedure dates.
+- Created a week type column (Weekend & Weekday) to understand trends in patient admissions, optimize staffing, and improve resource allocation.
+- Created calculated columns in ‘encounters’ table as ‘NextStartDate’ (to find the date of next admission of the same patient) and ‘IsReadmission’ (to get whether it is a re admission or not (True or False)). Considering re admission as any hospital stay that occurs within 30 days after the discharge of a previous stay.
+- Considering ‘Admission’ as a hospital stay for more than or equal to 15 hours and Re admission as any admission of the same patient (>= 15hours stay) within 30 days of the previous admission, irrespective of the encounter class.
 
 -- **Some of the measures created are**--
 1.	Total Revenue
